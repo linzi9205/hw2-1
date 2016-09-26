@@ -1,11 +1,10 @@
-
 var circlesX = [];
 var circlesY = [];
-var speedX=[];
-var speedY=[];
-var directionX=[];
-var directionY=[];
-var colorH=[];
+var speedX = [];
+var speedY = [];
+var directionX = [];
+var directionY = [];
+var colorH = [];
 
 function setup() {
   createCanvas(600, 600);
@@ -15,11 +14,11 @@ function setup() {
 function mousePressed() {
   circlesX.push(mouseX);
   circlesY.push(mouseY);
-  speedX.push(random(4,6));
-  speedY.push(random(4,6));
-  directionX.push(random(-1,1));
-  directionY.push(random(-1,1));
-  colorH.push(random(0,360));
+  speedX.push(random(4, 6));
+  speedY.push(random(4, 6));
+  directionX.push(random(-1, 1));
+  directionY.push(random(-1, 1));
+  colorH.push(random(0, 360));
 }
 
 function draw() {
@@ -27,7 +26,7 @@ function draw() {
   for (var i = 0; i < circlesX.length; i++) {
     noStroke;
     colorMode(HSB);
-    fill(colorH[i],100,100);
+    fill(colorH[i], 100, 100);
     ellipse(circlesX[i], circlesY[i], 40, 40);
     circlesX[i] = circlesX[i] + speedX[i] * directionX[i];
     circlesY[i] = circlesY[i] + speedY[i] * directionY[i];
@@ -38,5 +37,4 @@ function draw() {
       directionY[i] = -1 * directionY[i];
     }
   }
-
 }
