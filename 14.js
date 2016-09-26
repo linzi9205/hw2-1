@@ -8,7 +8,7 @@ var colorH = [];
 
 function setup() {
   createCanvas(600, 600);
-  background(0);
+  background(255);
 }
 
 function mousePressed() {
@@ -22,9 +22,9 @@ function mousePressed() {
 }
 
 function draw() {
-  background(0);
+  background(255);
   for (var i = 0; i < circlesX.length; i++) {
-    noStroke;
+    noStroke();
     colorMode(HSB);
     fill(colorH[i], 100, 100);
     ellipse(circlesX[i], circlesY[i], 40, 40);
